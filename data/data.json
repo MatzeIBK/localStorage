@@ -1,0 +1,12 @@
+{
+
+    "contacts": [
+
+        {   "first"   : "Joe",          "last"    : "Bloggs"        },
+        {   "first"   : "Mary",             "last"    : "Johnson"       },
+        {   "first"   : "Paul",             "last"    : "Smith"                 },
+        {   "first"   : "Tina",     "last"    : "Clarks"                }
+
+    ]
+
+}
