@@ -12,8 +12,8 @@
 </head>
 <body>
 
-    <section class="container" id="contacts">
-        <ul></ul>
+    <section class="container" id="contacts" style="text-align: center">
+        <div style="margin: 0 auto 0 auto"></div>
     </section>
 
     <script src="js/jquery.min.js"></script>
@@ -23,9 +23,15 @@
             $.getJSON("data/data.json").done(function(data) {
                 localStorage.setItem("data", JSON.stringify(data));
                 $.each(data.contacts, function (index, value) {
-                    $("#contacts ul").append(
-                            "<li>First Name: "+ value.first + "<br> Last Name: " + value.last +
-                            "</li>"
+                    $("#contacts").append(
+                            "<div style='margin-bottom: 20px'>First Name: "+ value.first + "<br> Last Name: " + value.last +
+                            "</div>"
+                    );
+                });
+                $.each(data.artists, function (index, value) {
+                    $("#contacts").append(
+                            "<div style='margin-bottom: 20px'>Name: "+ value.name + "<br> Time: " + value.time +
+                            "</div>"
                     );
                 });
             }).fail(function(){
@@ -36,7 +42,7 @@
                     $.each(localData.contacts, function(index, value){
 
                         $("#contacts ul").append(
-                                "<li class='topcoat-list__item'>\
+                                "<li>\
                                     First Name: " + value.first + "<br> Last Name: " + value.last +
                                 "</li>"
                         );
